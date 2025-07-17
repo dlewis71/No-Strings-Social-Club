@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>No Strings Social Club</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 </head>
 
@@ -16,23 +16,13 @@
             <nav class="cf">
                 <ul id="brain" class="cf">
                     <li class="hide-on-small">
-                        <a href="#showcase">Login</a>
+                        <a href="#showcase">No Strings Social Club</a>
                     </li>
-                    <li>
-                        <a href="#about">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#friend-zone">Friend Zone</a>
-                    </li>
-                    <li>
-                        <a href="#music">Music</a>
-                    </li>
-                    <li>
-                        <a href="#video">Video</a>
-                    </li>
-                    <li>
-                        <a href="#login">Login</a>
-                    </li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#footer">Footer</a></li>
                 </ul>
                 <a href="#" id="openup"></a>
             </nav>
@@ -40,81 +30,77 @@
 
         <div class="section-main container">
             <h1>No Strings Social Club</h1>
-            <img src="images/Rihanna-001.png" class="big-img" alt="">
+            <img src="images/Rihanna-001.png" class="big-img" alt="" />
             <h2>Where your music and movies take center stage.</h2>
             <p class="lead hide-on-small">
-                No Strings Social Club is the best way to enjoy the music you have, shop for
-                the songs you want, and conversate with people who want to have fun with no attachments.
-                No Strings Social Club offer offers this and more.
+                No Strings Social Club is the best way to enjoy the music you have, shop for the songs you want, and
+                conversate with people who want to have fun with no attachments. No Strings Social Club offer offers
+                this and
+                more.
             </p>
         </div>
     </div>
 
-    <!-- Music Section -->
     <section id="music" class="section">
         <div class="container">
             <h2 class="section-head">
-                <i class="bi bi-music-player-fill"></i>
+                <i class="bi bi-music-player-fill"></i> Featured Music Videos
             </h2>
-            <h3>All music and Videos. Zero ads.</h3>
-            <p class="lead">
-                Stream over songs and movies ad-free. Or download albums and tracks to listen offline. All the
-                music
-                in your personal No Strings Social Club library — no matter where it came from — lives right alongside
-                the Social Club
-                Music catalog.
-                Start your free membership with no commitment, and cancel anytime.
+
+            <div class="video-wrapper"
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; box-shadow: 0 4px 15px rgba(201, 79, 124, 0.3); margin-top: 20px;">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID_HERE&autoplay=0&rel=0"
+                    title="No Strings Social Club Playlist" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
+            </div>
+
+            <p style="margin-top: 1rem; text-align: center;">
+                <a href="https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ" target="_blank"
+                    rel="noopener noreferrer"
+                    style="display: inline-block; padding: 12px 24px; background: #c94f7c; color: white; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+                    Visit Our YouTube Music Channel
+                </a>
             </p>
-            <!-- Music Section -->
-            <section id="music" class="section">
+        </div>
+    </section>
+
+    <p class="text-light">No Strings Social Club is available for all devices.</p>
+    <div class="device-images">
+        <img src="images/iphone-16-pro-ghost-hand.png" alt="iPhone 16" />
+        <br /><br />
+        <img src="images/Android16.png" alt="Android 16" />
+    </div>
+
+    <!-- Video Section -->
+    <section id="video" class="section bg-light">
+        <div class="container">
+            <h3>The movie collection you always wished for. Granted.</h3>
+            <p class="lead">
+                With a variety of movies to choose from, there's always something great to watch on No Strings Social
+                Club.
+                And if you watch on Orange TV 4K, you'll be able to enjoy a tremendous selection of your favorite
+                content in
+                4K HDR. So get ready to enjoy episodes of your favorite hit movies — anytime, anywhere. Just tap to
+                play, or
+                even download if you're going somewhere without Wi-Fi.
+            </p>
+
+            <h3>The movie collection you always wished for. Granted.</h3>
+
+            <section id="tubi-browse" class="section bg-light">
                 <div class="container">
-                    <h2 class="section-head"></h2>
-                    <p class="lead">
-                        Stream over songs and movies ad-free. Or download albums and tracks to listen offline.
-                    </p>
-                    <!-- Audio Player -->
-                    <audio id="audioPlayer" controls>
-                        <source id="audioSource" src="music/carefree-day-200887.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-
-
-                    <!-- 🎶 Playlist -->
-                    <ul id="playlist">
-                        <li data-src="music/jam-1.mp3">Song One 🎵</li>
-                        <li data-src="music/jam-2.mp3">Song Two 🎶</li>
-                        <li data-src="music/jam-3.mp3">Song Three 🎧</li>
-                        <li data-src="music/jam-4.mp3">Song Four 🎷</li>
-                        <li data-src="music/jam-5.mp3">Song Five 🎸</li>
-                    </ul>
-
-                    <p class="text-light">No Strings Social Club is available for all devices.</p>
-                    <div class="device-images">
-                        <img src="images/iphone-16-pro-ghost-hand.png" alt="iPhone 16" />
-                        <br /><br />
-                        <img src="images/Android16.png" alt="Android 16" />
+                    <h3 class="section-title">🎬 Browse Free Movies on Tubi</h3>
+                    <p class="section-lead">Laugh, love, or get scared — instantly stream the perfect film for your
+                        vibe.</p>
+                    <div class="tubi-genres">
+                        <a href="https://tubitv.com/category/comedy" target="_blank" class="tubi-button">😂Comedy</a>
+                        <a href="https://tubitv.com/category/romance" target="_blank" class="tubi-button">💘 Romance</a>
+                        <a href="https://tubitv.com/category/horror" target="_blank" class="tubi-button">😱 Horror</a>
                     </div>
                 </div>
             </section>
 
-            <!-- Video Section -->
-            <section id="video" class="section bg-light">
-                <div class="container">
-                    <h3>The movie collection you always wished for. Granted.</h3>
-                    <p class="lead">
-                        With a variety of movies to choose from, there's always something
-                        great to watch on No Strings Social Club. And if you watch on Orange TV 4K, you'll be able to
-                        enjoy
-                        a tremendous selection of your favorite content in 4K HDR. So get ready to enjoy
-                        episodes of your favorite hit movies — anytime,
-                        anywhere. Just tap to play, or even download if you're going somewhere without Wi-Fi.
-                    </p>
-
-
-
-            </section>
-            <a href="#" class="btn btn-secondary">Movies</a>
-            <br /><br />
             <img src="images/prettywoman5.png" class="big" id="myImg" width="224" height="162" alt="Pretty Woman" />
         </div>
     </section>
@@ -124,9 +110,11 @@
         <div class="container">
             <h3>Friend Zone</h3>
             <p class="lead">
-                Live grown-up conversations for people to get to know one another
-                in a safe, judgment-free environment. At No Strings Social Club, we provide a
-                platform where you can be yourself and let the conversations take you where they may.
+                Live grown-up conversations for people to get to know one another in a safe, judgment-free environment.
+                At No
+                Strings Social Club, we provide a platform where you can be yourself and let the conversations take you
+                where
+                they may.
             </p>
 
             <!-- Multi-User Chat Interface -->
@@ -134,17 +122,18 @@
                 <div class="chat-sidebar">
                     <h4>Users</h4>
                     <ul id="userList">
-                        <li data-user="Destiny">Destiny</li>
-                        <li data-user="Tiffany">Tiffany</li>
-                        <li data-user="Ashley">Ashley</li>
-                        <li data-user="stone fox">stone fox</li>
-                        <li data-user="good_fellow">good_fellow</li>
-                        <li data-user="too-cool">too_cool</li>
-                        <li data-user="down2">down2</li>
-                        <li data-user="live life">live life</li>
-                        <li data-user="bout data-src">bout dat</li>
-                        <li data-user="willing one">willing one</li>
+                        <li class="chat-user" data-user="Destiny" tabindex="0">Destiny</li>
+                        <li class="chat-user" data-user="Tiffany" tabindex="0">Tiffany</li>
+                        <li class="chat-user" data-user="Ashley" tabindex="0">Ashley</li>
+                        <li class="chat-user" data-user="stone fox" tabindex="0">stone fox</li>
+                        <li class="chat-user" data-user="good_fellow" tabindex="0">good_fellow</li>
+                        <li class="chat-user" data-user="too-cool" tabindex="0">too_cool</li>
+                        <li class="chat-user" data-user="down2" tabindex="0">down2</li>
+                        <li class="chat-user" data-user="live life" tabindex="0">live life</li>
+                        <li class="chat-user" data-user="bout dat" tabindex="0">bout dat</li>
+                        <li class="chat-user" data-user="willing one" tabindex="0">willing one</li>
                     </ul>
+
                 </div>
 
                 <div class="chat-main">
@@ -165,7 +154,8 @@
             <h3>About Us</h3>
             <p class="lead">
                 No Strings Social Club is a platform for genuine connection, music, and entertainment. Be yourself,
-                connect freely, and enjoy curated content on any device.
+                connect
+                freely, and enjoy curated content on any device.
             </p>
         </div>
     </section>
@@ -175,16 +165,15 @@
         <div class="container">
             <h3>Member Login</h3>
             <form id="loginForm" class="login-form">
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required />
                 <button type="submit">Login</button>
             </form>
         </div>
     </section>
 
-
     <!-- Footer -->
-    <footer class="social-footer">
+    <footer id="footer" class="social-footer">
         <div class="container footer-content">
             <div class="footer-brand">
                 <img src="images/logo.png" alt="No Strings Social Club Logo" class="footer-logo" />
@@ -195,7 +184,8 @@
                 <a href="#music">Music</a>
                 <a href="#video">Video</a>
                 <a href="#friend-zone">Friend Zone</a>
-                <a href="#about">About Us</a>
+                <a href="#about-us">About-Us</a>
+                <a href="#footer">Footer</a>
             </div>
         </div>
         <button id="scrollTopBtn" title="Go to top"><i class="bi bi-arrow-up"></i></button>
