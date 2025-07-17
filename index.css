@@ -76,6 +76,7 @@ nav li a {
 }
 
 /* Section Styling */
+
 .section {
     padding: 4rem 1rem;
     background: var(--white);
@@ -167,6 +168,13 @@ nav li a {
   #youtubePlayer {
     max-width: 100%;
   }
+}
+
+.device-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
 }
 
 /* Movie Section */
