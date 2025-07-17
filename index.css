@@ -13,6 +13,7 @@ html {
     font-family: "Sofia", sans-serif;
     background: var(--background-light);
     color: var(--text-color);
+    cursor: default;
     scroll-behavior: smooth;
 }
 
@@ -433,5 +434,21 @@ nav li a {
     background: var(--primary-color);
     color: var(--white);
     border: none;
+}
+
+/* Show pointer (hand) on interactive elements */
+a,
+button,
+input[type="submit"],
+input[type="button"],
+label,
+[role="button"],
+.clickable,
+.hover-pointer {
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
 }
 
