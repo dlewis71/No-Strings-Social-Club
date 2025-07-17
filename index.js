@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollDuration = 1200;
 
   function smoothScrollTo(targetY, duration = scrollDuration) {
-    const startY = window.scrollY;
+    const startY = window.pageYOffset; // changed from window.scrollY
     const distanceY = targetY - startY;
     const startTime = performance.now();
 
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   smoothLinks.forEach(link => {
     link.addEventListener("click", function (e) {
+      e.preventDefault(); // moved here to prevent default jump immediately
       const targetId = this.getAttribute("href");
       if (!targetId.startsWith("#") || targetId === "#") return;
       const target = document.querySelector(targetId);
       if (target) {
-        e.preventDefault();
-        const targetY = target.offsetTop - headerOffset;
+        const targetY = Math.max(0, target.offsetTop - headerOffset); // clamp targetY >= 0
         smoothScrollTo(targetY);
         history.pushState(null, null, targetId);
       }
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ===== FRIEND ZONE CHAT FEATURE (fixed) =====
-  const userList = document.querySelectorAll("#userList .chat-user");
+  // ===== FRIEND ZONE CHAT FEATURE =====
+  const userList = document.querySelectorAll("#userList li");
   const chatTitle = document.getElementById("chatTitle");
   const chatForm = document.getElementById("chatForm");
   const chatInput = document.getElementById("chatInput");
@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       currentRecipient = this.getAttribute("data-user");
       chatTitle.textContent = "Chatting with " + currentRecipient;
+      chatMessages.innerHTML = ""; // clear previous messages on user switch
       chatInput.focus();
     });
   });
@@ -139,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
 
 

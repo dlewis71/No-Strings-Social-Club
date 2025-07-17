@@ -35,12 +35,15 @@ a:hover {
 
 .big-img {
     width: 900px;
+    height: 300px;
 }
 
-img {
-    width: 300px;
-    list-style: none;
-    text-decoration: none;
+
+.users, img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;  /* subtle rounding for style */
 }
 
 /* Header & Navigation */
@@ -95,6 +98,7 @@ nav li a {
 
 .container {
     max-width: 1100px;
+    
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -173,9 +177,14 @@ nav li a {
 .device-images {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  
 }
+
+.phone {
+  width: 200px;
+  height: 200px;
+}
+
+
 
 /* Movie Section */
 
@@ -413,7 +422,7 @@ nav li a {
 }
 
 .footer-logo {
-    width: 80px;
+    width: 190px;
     margin-bottom: 1rem;
 }
 
@@ -426,13 +435,3 @@ nav li a {
     border: none;
 }
 
-#myDIV { 
-  width:100%;
-  height:100%;
-}
-#myImg{
-  height: 30%;
-  display: block;
-  margin: 80px auto 0;
-  -webkit-box-reflect: right;
-}

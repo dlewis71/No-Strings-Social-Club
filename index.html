@@ -24,19 +24,18 @@
                     <li><a href="#login">Login</a></li>
                     <li><a href="#footer">Footer</a></li>
                 </ul>
-                <a href="#" id="openup"></a>
+                <a href="#showcase" id="openup" aria-label="Toggle menu"></a>
             </nav>
         </header>
 
         <div class="section-main container">
             <h1>No Strings Social Club</h1>
-            <img src="images/Rihanna-001.png" class="big-img" alt="" />
+            <img src="images/Rihanna-1.png" class="big-img" alt="Rihanna featured banner" />
             <h2>Where your music and movies take center stage.</h2>
             <p class="lead hide-on-small">
                 No Strings Social Club is the best way to enjoy the music you have, shop for the songs you want, and
-                conversate with people who want to have fun with no attachments. No Strings Social Club offer offers
-                this and
-                more.
+                conversate with people who want to have fun with no attachments. No Strings Social Club offers
+                this and more.
             </p>
         </div>
     </div>
@@ -49,9 +48,9 @@
 
             <div class="video-wrapper"
                 style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; box-shadow: 0 4px 15px rgba(201, 79, 124, 0.3); margin-top: 20px;">
-                <iframe src="https://www.youtube.com/embed/videoseries?list=YOUR_PLAYLIST_ID_HERE&autoplay=0&rel=0"
-                    title="No Strings Social Club Playlist" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen
+                <iframe
+                    src="https://www.youtube.com/embed/videoseries?list=PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI&autoplay=0&rel=0"
+                    title="No Strings Social Club Playlist" allow="autoplay; encrypted-media" allowfullscreen
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>
             </div>
 
@@ -65,16 +64,14 @@
         </div>
     </section>
 
-   
-    <div class="device-images">
-         <h3>No Strings Social Club is available for all devices.</h3>
-        <img src="images/iphone-16-pro-ghost-hand.png" alt="iPhone 16" />
+    <!-- Device Images wrapped in container for alignment -->
+    <div class="device-images container" style="margin-bottom: 1rem;">
+        <h3>No Strings Social Club is available for all devices.</h3>
+        <img src="images/iphone-16-pro-ghost-hand.png" class="phone" alt="iPhone 16 device" />
         <br /><br />
-        <img src="images/Android16.png" alt="Android 16" />
-        
+        <img src="images/Android16.png" class="phone" alt="Android 16 device" />
     </div>
 
-    <!-- Video Section -->
     <section id="video" class="section bg-light">
         <div class="container">
             <h3>The movie collection you always wished for. Granted.</h3>
@@ -88,54 +85,58 @@
                 even download if you're going somewhere without Wi-Fi.
             </p>
 
-            <h3>The movie collection you always wished for. Granted.</h3>
-
             <section id="tubi-browse" class="section bg-light">
                 <div class="container">
                     <h3 class="section-title">🎬 Browse Free Movies on Tubi</h3>
-                    <p class="section-lead">Laugh, love, or get scared — instantly stream the perfect film for your
+                    <p class="section-lead">you can get an adrinalin rush, Laugh, love, or get scared — instantly stream the perfect film for your
                         vibe.</p>
                     <div class="tubi-genres">
-                        <a href="https://tubitv.com/category/comedy" target="_blank" class="tubi-button">😂Comedy</a>
-                        <a href="https://tubitv.com/category/romance" target="_blank" class="tubi-button">💘 Romance</a>
+                        <a href="https://tubitv.com/category/action" target="_blank" class="tubi-button">😂 Action</a>
+                        <a href="https://tubitv.com/category/comedy" target="_blank" class="tubi-button">💘 Comedy</a>
                         <a href="https://tubitv.com/category/horror" target="_blank" class="tubi-button">😱 Horror</a>
+                        <a href="https://tubitv.com/category/romance" target="_blank" class="tubi-button">😱 Romance</a>
                     </div>
                 </div>
             </section>
 
-            <img src="images/prettywoman5.png" class="big" id="myImg" width="224" height="162" alt="Pretty Woman" />
+
         </div>
     </section>
 
-    <!-- Friend Zone Chat -->
     <section id="friend-zone" class="section">
         <div class="container">
             <h3>Friend Zone</h3>
             <p class="lead">
                 Live grown-up conversations for people to get to know one another in a safe, judgment-free environment.
-                At No
-                Strings Social Club, we provide a platform where you can be yourself and let the conversations take you
-                where
-                they may.
+                At No Strings Social Club, we provide a platform where you can be yourself and let the conversations
+                take you where they may.
             </p>
 
-            <!-- Multi-User Chat Interface -->
             <div class="chat-wrapper">
                 <div class="chat-sidebar">
                     <h4>Users</h4>
-                    <ul id="userList">
-                        <li class="chat-user" data-user="Destiny" tabindex="0">Destiny</li>
-                        <li class="chat-user" data-user="Tiffany" tabindex="0">Tiffany</li>
-                        <li class="chat-user" data-user="Ashley" tabindex="0">Ashley</li>
-                        <li class="chat-user" data-user="stone fox" tabindex="0">stone fox</li>
-                        <li class="chat-user" data-user="good_fellow" tabindex="0">good_fellow</li>
-                        <li class="chat-user" data-user="too-cool" tabindex="0">too_cool</li>
-                        <li class="chat-user" data-user="down2" tabindex="0">down2</li>
-                        <li class="chat-user" data-user="live life" tabindex="0">live life</li>
-                        <li class="chat-user" data-user="bout dat" tabindex="0">bout dat</li>
-                        <li class="chat-user" data-user="willing one" tabindex="0">willing one</li>
+                    <ul id="userList" class="user-list">
+                        <li data-user="Destiny">
+                            <img src="images/prettywoman1.png" alt="Destiny" />
+                            <span>Destiny</span>
+                        </li>
+                        <li data-user="Tiffany">
+                            <img src="images/prettywoman2.png" alt="Tiffany" />
+                            <span>Tiffany</span>
+                        </li>
+                        <li data-user="Ashley">
+                            <img src="images/prettywoman3.png" alt="Ashley" />
+                            <span>Ashley</span>
+                        </li>
+                        <li data-user="Stone Fox">
+                            <img src="images/prettywoman4.png" alt="Stone Fox" />
+                            <span>Stone Fox</span>
+                        </li>
+                        <li data-user="Good Fellow">
+                            <img src="images/prettywoman5.png" alt="Good Fellow" />
+                            <span>Good Fellow</span>
+                        </li>
                     </ul>
-
                 </div>
 
                 <div class="chat-main">
@@ -149,8 +150,6 @@
             </div>
         </div>
     </section>
-
-    <!-- About Us Section -->
     <section id="about" class="section bg-light">
         <div class="container">
             <h3>About Us</h3>
@@ -162,7 +161,6 @@
         </div>
     </section>
 
-    <!-- Login Section -->
     <section id="login" class="section bg-light">
         <div class="container">
             <h3>Member Login</h3>
@@ -174,11 +172,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="footer" class="social-footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <img src="images/logo.png" alt="No Strings Social Club Logo" class="footer-logo" />
+                <img src="images/puppet.png" class="footer-brand" alt="No Strings Social Club Logo" />
                 <p>&copy; 2025 No Strings Social Club. All rights reserved.</p>
             </div>
             <div class="footer-links">
@@ -186,7 +183,7 @@
                 <a href="#music">Music</a>
                 <a href="#video">Video</a>
                 <a href="#friend-zone">Friend Zone</a>
-                <a href="#about-us">About-Us</a>
+                <a href="#about">About-Us</a>
                 <a href="#footer">Footer</a>
             </div>
         </div>
