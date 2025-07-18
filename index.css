@@ -1,126 +1,132 @@
 :root {
-    --primary-color: #c94f7c;
-    --accent-color: #f8b195;
-    --background-light: #fcefee;
-    --text-color: #333;
-    --white: #ffffff;
+  --primary-color: #c94f7c;
+  --accent-color: #f8b195;
+  --background-light: #fcefee;
+  --text-color: #333;
+  --white: #ffffff;
 }
 
 body,
 html {
-    margin: 0;
-    padding: 0;
-    font-family: "Sofia", sans-serif;
-    background: var(--background-light);
-    color: var(--text-color);
-    cursor: default;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Sofia", sans-serif;
+  background: var(--background-light);
+  color: var(--text-color);
+  cursor: default;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
 }
 
 h1 {
   font-size: 3.8rem;
 }
 
-h3{
+h3 {
   font-size: 1.7rem;
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-color);
-    
+  text-decoration: none;
+  color: var(--primary-color);
+
 }
 
 a:hover {
-    color: #a43860;
+  color: #a43860;
 }
 
 .lead {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .big-img {
-    width: 900px;
-    height: 300px;
+  width: 900px;
+  height: 300px;
 }
 
 
-.users, img {
+.users,
+img {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 8px;  /* subtle rounding for style */
+  border-radius: 8px;
+  /* subtle rounding for style */
 }
 
 /* Header & Navigation */
 nav {
-    background: var(--white);
-    padding: 1rem;
-    border-bottom: 2px solid var(--accent-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background: var(--white);
+  padding: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: 1rem;
-    justify-content: space-evenly;
-    font-size: 1.3rem;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0;
 }
 
 nav li a {
-    color: var(--primary-color);
-    font-weight: bold;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 #openup {
-    display: none;
-    color: var(--primary-color);
-    font-size: 1.2rem;
+  display: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
 }
 
 /* Section Styling */
 
 .section {
-    padding: 4rem 1rem;
-    background: var(--white);
+  padding: 4rem 1rem;
+  background: var(--white);
 }
 
 .section.big-light {
-    background: var(--background-light);
+  background: var(--background-light);
 }
 
 .section-head {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .container {
-    max-width: 1100px;
-    
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1100px;
+
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Music PLayer & Playlist */
 #music {
-  background-color: #fcefee; /* light rosy background */
+  background-color: #fcefee;
+  /* light rosy background */
   padding: 2.5rem 1.5rem;
   border-radius: 12px;
   max-width: 700px;
   margin: 3rem auto;
-  box-shadow: 0 3px 15px rgba(201, 79, 124, 0.15); /* subtle rosy shadow */
+  box-shadow: 0 3px 15px rgba(201, 79, 124, 0.15);
+  /* subtle rosy shadow */
   font-family: 'Sofia', cursive, Arial, sans-serif;
   color: #333;
   text-align: center;
@@ -128,7 +134,8 @@ nav li a {
 
 /* --- Section Headings --- */
 #music .section-head {
-  color: #c94f7c; /* rosy pink */
+  color: #c94f7c;
+  /* rosy pink */
   font-size: 2rem;
   margin-bottom: 0.75rem;
   display: flex;
@@ -144,7 +151,8 @@ nav li a {
 }
 
 /* --- Playlist Styling --- */
-#playlist,#music-playlist {
+#playlist,
+#music-playlist {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
@@ -166,6 +174,7 @@ nav li a {
   color: #f8b195;
   text-decoration: underline;
 }
+
 /* --- Responsive tweaks --- */
 @media (max-width: 650px) {
   #music {
@@ -263,7 +272,7 @@ nav li a {
   margin-top: 2rem;
 }
 
-.name{
+.name {
   font-size: 1.4rem;
 }
 
@@ -381,47 +390,50 @@ nav li a {
 
 /* Login Form */
 .login-form {
-    background: var(--white);
-    border: 2px solid var(--accent-color);
-    padding: 2rem;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 4 12px rgba(201, 79 124, 0.1);
+  background: var(--white);
+  border: 2px solid var(--accent-color);
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4 12px rgba(201, 79 124, 0.1);
 }
 
 .login-form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 6px;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
 }
 
 .login-form input:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 .login-form button {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 0.8rem;
-    width: 100%;
-    border-radius: 6px;
-    cursor: pointer;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .login-form button:hover {
-    background: #a43860;
+  background: #a43860;
 }
 
-/* Sign up Section *//* ===== Modal (Inline Modal, Not Fixed) ===== */
+/* Sign up Section */
+/* ===== Modal (Inline Modal, Not Fixed) ===== */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
   width: 100%;
-  background-color: rgba(201, 79, 124, 0.05); /* soft overlay effect */
+  background-color: rgba(201, 79, 124, 0.05);
+  /* soft overlay effect */
   padding: 40px 20px;
   box-sizing: border-box;
 }
@@ -450,6 +462,7 @@ nav li a {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 .close:hover {
   transform: scale(1.2);
 }
@@ -468,6 +481,7 @@ nav li a {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
+
 }
 
 .modal-content input[type="text"],
@@ -483,6 +497,7 @@ nav li a {
   font-size: 16px;
   transition: border 0.3s ease;
 }
+
 .modal-content input:focus {
   border-color: #c94f7c;
   outline: none;
@@ -492,6 +507,7 @@ nav li a {
 .modal-content input[type="checkbox"] {
   margin-right: 5px;
 }
+
 .modal-content p {
   font-size: 14px;
   color: #666;
@@ -511,6 +527,7 @@ nav li a {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .signupbtn:hover {
   background-color: #a63e65;
 }
@@ -518,34 +535,34 @@ nav li a {
 
 /* Footer */
 .social-footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 2rem 1rem;
-    text-align: center;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .footer-links a {
-   color: var(--white); 
-   margin: 0 0.5rem;
-   display: inline-block;
+  color: var(--white);
+  margin: 0 0.5rem;
+  display: inline-block;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .footer-logo {
-    width: 190px;
-    margin-bottom: 1rem;
+  width: 190px;
+  margin-bottom: 1rem;
 }
 
 #scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
 }
 
 /* Show pointer (hand) on interactive elements */
@@ -576,7 +593,7 @@ input {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
+  margin: 02rem auto;
   display: inline-block;
 }
 
@@ -589,4 +606,3 @@ input {
   background-color: #a0305f;
   transform: scale(0.98);
 }
-

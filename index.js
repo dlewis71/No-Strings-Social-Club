@@ -1,38 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // ===== SMOOTH SCROLL =====
-  const smoothLinks = document.querySelectorAll(".cf a[href^='#']");
-  const headerOffset = 80;
-  const scrollDuration = 1200;
-
-  function smoothScrollTo(targetY, duration = scrollDuration) {
-    const startY = window.pageYOffset; // changed from window.scrollY
-    const distanceY = targetY - startY;
-    const startTime = performance.now();
-
-    function scroll(currentTime) {
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      window.scrollTo(0, startY + distanceY * easeInOutQuad(progress));
-      if (progress < 1) requestAnimationFrame(scroll);
-    }
-
-    function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    requestAnimationFrame(scroll);
-  }
-
-  smoothLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // moved here to prevent default jump immediately
-      const targetId = this.getAttribute("href");
-      if (!targetId.startsWith("#") || targetId === "#") return;
+document.addEventListener("DOMContentLoaded", () => {
+  // ===== SMOOTH SCROLL (simple beginner-friendly version) =====
+  const navLinks = document.querySelectorAll(".cf a[href^='#']");
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault(); // prevent instant jump
+      const targetId = link.getAttribute("href");
       const target = document.querySelector(targetId);
       if (target) {
-        const targetY = Math.max(0, target.offsetTop - headerOffset); // clamp targetY >= 0
-        smoothScrollTo(targetY);
-        history.pushState(null, null, targetId);
+        window.scrollTo({
+          top: target.offsetTop - 80, // adjust for header height
+          behavior: "smooth",         // smooth animation
+        });
+        history.pushState(null, null, targetId); // update URL
       }
     });
   });
@@ -41,47 +20,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const audioPlayer = document.getElementById("audioPlayer");
   const audioSource = document.getElementById("audioSource");
   const audioPlaylist = document.getElementById("playlist");
-
   if (audioPlayer && audioSource && audioPlaylist) {
-    const audioTracks = Array.from(audioPlaylist.getElementsByTagName("li"));
-
-    function setActiveAudio(index) {
-      audioTracks.forEach((track, i) => {
-        track.style.fontWeight = i === index ? "bold" : "normal";
-        track.style.color = i === index ? "#c94f7c" : "#333";
+    const tracks = Array.from(audioPlaylist.getElementsByTagName("li"));
+    function setActive(i) {
+      tracks.forEach((t, idx) => {
+        t.style.fontWeight = idx === i ? "bold" : "normal";
+        t.style.color = idx === i ? "#c94f7c" : "#333";
       });
     }
-
-    audioTracks.forEach((track, i) => {
+    tracks.forEach((track, i) => {
       track.addEventListener("click", () => {
         const src = track.getAttribute("data-src");
         if (src) {
           audioSource.src = src;
           audioPlayer.load();
           audioPlayer.play();
-          setActiveAudio(i);
+          setActive(i);
           audioPlayer.dataset.currentIndex = i;
         }
       });
     });
-
     audioPlayer.addEventListener("ended", () => {
-      const currentIndex = parseInt(audioPlayer.dataset.currentIndex || "0", 10);
-      const nextIndex = currentIndex + 1;
-      if (nextIndex < audioTracks.length) {
-        audioTracks[nextIndex].click();
-      }
+      let currentIndex = parseInt(audioPlayer.dataset.currentIndex || "0", 10);
+      let nextIndex = currentIndex + 1;
+      if (nextIndex < tracks.length) tracks[nextIndex].click();
     });
-
-    setActiveAudio(0);
+    setActive(0);
     audioPlayer.dataset.currentIndex = 0;
   }
 
   // ===== LOGIN FORM =====
   const loginForm = document.getElementById("loginForm");
-
   if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
+    loginForm.addEventListener("submit", e => {
       e.preventDefault();
       const username = loginForm.querySelector("input[type='text']").value;
       alert(`Welcome, ${username}! (Login feature coming soon)`);
@@ -89,94 +60,82 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ===== MUSIC PLAYLIST LINKS REDIRECT TO YOUTUBE MUSIC CHANNEL =====
+  // ===== YOUTUBE MUSIC CHANNEL LINKS =====
   const playlistLinks = document.querySelectorAll("#music-playlist a");
-
   playlistLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", e => {
       e.preventDefault();
       window.location.href = "https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ";
     });
   });
 
-  // ===== FRIEND ZONE CHAT FEATURE =====
+  // ===== FRIEND ZONE CHAT =====
   const userList = document.querySelectorAll("#userList li");
   const chatTitle = document.getElementById("chatTitle");
   const chatForm = document.getElementById("chatForm");
   const chatInput = document.getElementById("chatInput");
   const chatMessages = document.getElementById("chatMessages");
-
   let currentRecipient = null;
-
   userList.forEach(user => {
-    user.addEventListener("click", function (e) {
+    user.addEventListener("click", e => {
       e.preventDefault();
-      currentRecipient = this.getAttribute("data-user");
-      chatTitle.textContent = "Chatting with " + currentRecipient;
-      chatMessages.innerHTML = ""; // clear previous messages on user switch
+      currentRecipient = user.getAttribute("data-user");
+      chatTitle.textContent = `Chatting with ${currentRecipient}`;
+      chatMessages.innerHTML = "";
       chatInput.focus();
     });
   });
-
   if (chatForm) {
-    chatForm.addEventListener("submit", function (e) {
+    chatForm.addEventListener("submit", e => {
       e.preventDefault();
-
       if (!currentRecipient) {
         alert("Please select a user to chat with.");
         return;
       }
-
-      const messageText = chatInput.value.trim();
-      if (messageText === "") return;
-
+      const message = chatInput.value.trim();
+      if (message === "") return;
       const msg = document.createElement("div");
       msg.classList.add("sent-message");
-      msg.textContent = `Message sent to ${currentRecipient}: "${messageText}"`;
+      msg.textContent = `Message sent to ${currentRecipient}: "${message}"`;
       chatMessages.appendChild(msg);
-
       chatInput.value = "";
       chatMessages.scrollTop = chatMessages.scrollHeight;
     });
   }
 
+  // ===== SIGNUP MODAL =====
   const modal = document.getElementById("signup-modal");
   const openModalBtn = document.getElementById("openSignup");
-
   const closeBtn = document.querySelector(".close");
 
   if (openModalBtn && modal) {
-    openModalBtn.addEventListener("click", function (e) {
+    openModalBtn.addEventListener("click", e => {
       e.preventDefault();
       modal.style.display = "block";
     });
   }
-
   if (closeBtn && modal) {
-    closeBtn.addEventListener("click", function (e) {
+    closeBtn.addEventListener("click", e => {
       e.preventDefault();
       modal.style.display = "none";
-    })
+    });
   }
-
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
+  window.addEventListener("click", e => {
+    if (e.target === modal) modal.style.display = "none";
   });
 
-  // ===============Signup Form Submit Handler ================
   if (modal) {
     const signupForm = modal.querySelector("form");
     if (signupForm) {
-      signupForm.addEventListener("submit", function (e) {
+      signupForm.addEventListener("submit", e => {
         e.preventDefault();
         alert("Sign up form submitted!");
         signupForm.reset();
         modal.style.display = "none";
-      })
+      });
     }
   }
 });
+
 
 
