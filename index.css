@@ -417,6 +417,105 @@ nav li a {
     background: #a43860;
 }
 
+/* Sign up Section *//* ===== Modal (Inline Modal, Not Fixed) ===== */
+.modal {
+  display: none; /* Hidden by default */
+  width: 100%;
+  background-color: rgba(201, 79, 124, 0.05); /* soft overlay effect */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Modal Box ===== */
+.modal-content {
+  background-color: #fcefee;
+  margin: 0 auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Close Button ===== */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #c94f7c;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.close:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Form Header ===== */
+.modal-content h2 {
+  color: #c94f7c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== Labels & Inputs ===== */
+.modal-content label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"],
+.modal-content input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f8b195;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+.modal-content input:focus {
+  border-color: #c94f7c;
+  outline: none;
+}
+
+/* ===== Checkbox & Agreement Text ===== */
+.modal-content input[type="checkbox"] {
+  margin-right: 5px;
+}
+.modal-content p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ===== Submit Button ===== */
+.signupbtn {
+  background-color: #c94f7c;
+  color: #ffffff;
+  padding: 14px;
+  margin-top: 20px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.signupbtn:hover {
+  background-color: #a63e65;
+}
+
+
 /* Footer */
 .social-footer {
     background: var(--primary-color);
@@ -463,5 +562,31 @@ label,
 
 input {
   cursor: pointer;
+}
+
+/* Sign Up Now Button */
+#openSignup {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  display: inline-block;
+}
+
+#openSignup:hover {
+  background-color: #b63f6e;
+  transform: translateY(-2px);
+}
+
+#openSignup:active {
+  background-color: #a0305f;
+  transform: scale(0.98);
 }
 

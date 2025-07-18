@@ -139,15 +139,44 @@ document.addEventListener("DOMContentLoaded", function () {
       chatMessages.scrollTop = chatMessages.scrollHeight;
     });
   }
+
+  const modal = document.getElementById("signup-modal");
+  const openModalBtn = document.getElementById("openSignup");
+
+  const closeBtn = document.querySelector(".close");
+
+  if (openModalBtn && modal) {
+    openModalBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "none";
+    })
+  }
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // ===============Signup Form Submit Handler ================
+  if (modal) {
+    const signupForm = modal.querySelector("form");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Sign up form submitted!");
+        signupForm.reset();
+        modal.style.display = "none";
+      })
+    }
+  }
 });
-
-
-
-
-
-
-
-
-
 
 
